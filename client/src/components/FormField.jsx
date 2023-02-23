@@ -9,8 +9,7 @@ const FormField = ({
   handleChange,
   isSurpriseMe,
   handleSurpriseMe,
-}) => {
-  return (
+}) => (
     <div>
       <div className="flex items-center gap-2 mb-2">
         <label
@@ -30,6 +29,7 @@ const FormField = ({
       <input
         type={type}
         id={name}
+      name={name}
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
@@ -38,6 +38,6 @@ const FormField = ({
       />
     </div>
   )
-}
+
 
 export default FormField

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Loader from '../assets/components/Loader'
-import Card from '../assets/components/Card'
-import FormField from '../assets/components/FormField'
+import Loader from '../components/Loader'
+import Card from '../components/Card'
+import FormField from '../components/FormField'
 
 const RenderCards = ({ data, title }) => {
   if (data?.length > 0) {

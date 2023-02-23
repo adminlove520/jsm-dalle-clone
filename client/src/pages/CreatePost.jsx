@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom'
 
 import { preview } from '../assets'
 import { getRandomPrompt } from '../utils'
-import FormField from '../assets/components/FormField'
-import Loader from '../assets/components/Loader'
+import FormField from '../components/FormField'
+import Loader from '../components/Loader'
 
 const CreatePost = () => {
   const navigate = useNavigate()
@@ -13,9 +13,8 @@ const CreatePost = () => {
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = () => {}
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
-  }
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  
   const handleSurpriseMe =() => {
     const randomPrompt = getRandomPrompt(form.prompt)
     setForm({ ...form, prompt: randomPrompt })
@@ -51,7 +50,7 @@ const CreatePost = () => {
   }
 
   return (
-    <section className="max-7xl mx-auto">
+    <section className="max-w-7xl mx-auto">
       <div>
         <h1 className="font-extrabold text-[#222238">Create</h1>
         <p className="mt-2 text-[16px] max-w[500px]">
@@ -82,7 +81,7 @@ const CreatePost = () => {
           />
           <div
             className="
-          relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-gl focus:ring-blue-500
+          relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
            focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center">
             {form.photo ? (
               <img
@@ -109,7 +108,8 @@ const CreatePost = () => {
           <button
             type="button"
             onClick={generateImage}
-            className="text-white bg-green-700 font-medium rounded-md text-sm w-full Xsm:w-auto px-5 py-2.5 text-center">
+            className=" text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+          >
             {generatingImg ? 'Generating...' : 'Generate'}
           </button>
         </div>
@@ -121,7 +121,8 @@ const CreatePost = () => {
           </p>
           <button
             type="submit"
-            className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full Xsm:w-auto px-6 py-2.5 text-center">
+            className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+          >
             Share with the Community
           </button>
         </div>
