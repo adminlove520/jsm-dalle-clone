@@ -25,6 +25,7 @@ router.route('/').get(async (req, res) => {
   }
 })
 
+// Create a Post
 router.route('/').post(async (req, res) => {
   try {
     const { name, prompt, photo } = req.body
@@ -40,6 +41,5 @@ router.route('/').post(async (req, res) => {
     res.status(201).json({ success: false, message: error })
   }
 })
-// Create a Post
 
 export default router
